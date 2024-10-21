@@ -15,10 +15,17 @@ public interface EnseignantRestClient {
     Enseignant getEnseignant(@PathVariable Long id);
 
     default Enseignant getEnseignant(Long id, Exception ex) {
-        System.out.println("Fallback triggered for get Enseignant: " + ex.getMessage());
+        //System.out.println("Fallback triggered for get Enseignant: " + ex.getMessage());
         System.out.println("Fallback triggered for get Enseignant: " + Arrays.toString(ex.getStackTrace()));
 
-        return null;
+        Enseignant enseignant = new Enseignant();
+        enseignant.setId(id);
+        enseignant.setNom("not available");
+        enseignant.setPrenom("not available");
+        enseignant.setEmail("not available");
+        enseignant.setCne("not available");
+        enseignant.setRole("not available");
+        return enseignant;
     }
 
 }

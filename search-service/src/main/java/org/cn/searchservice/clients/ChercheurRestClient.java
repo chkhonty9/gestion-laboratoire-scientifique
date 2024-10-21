@@ -16,7 +16,6 @@ public interface ChercheurRestClient {
     Chercheur getChercheur(@PathVariable Long id);
 
     default Chercheur getChercheur(Long id, Exception ex) {
-        System.out.println("Fallback triggered for get chercheur: " + ex.getMessage());
         System.out.println("Fallback triggered for get chercheur: " + Arrays.toString(ex.getStackTrace()));
 
         return null;

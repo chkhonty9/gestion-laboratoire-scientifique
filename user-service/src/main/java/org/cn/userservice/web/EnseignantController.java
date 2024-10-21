@@ -35,7 +35,7 @@ public class EnseignantController {
         return ResponseEntity.ok(enseignantService.save(enseignant));
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         System.out.println("- web : delete enseignant");
         if(enseignantService.getEnseignant(id) == null)

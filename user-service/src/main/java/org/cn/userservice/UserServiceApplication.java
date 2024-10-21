@@ -30,7 +30,7 @@ public class UserServiceApplication {
             enseignant.setRole("ENSEIGNANT");
             enseignant.setPassword("nouhaila");
             enseignant.setCne("LB237777");
-            enseignant.setThematicResearch("thematic research");
+            enseignant.setThematicResearch("AI Research Project");
             enseignantService.save(enseignant);
             System.out.println("- enseignant : " + enseignant);
         };
